@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import reducers from './reducers';
@@ -9,9 +9,13 @@ import './styles/app.scss';
 
 const store = createStore(reducers, applyMiddleware(thunk));
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root'),
-);
+const root = document.getElementById('root');
+
+if (root) {
+  ReactDOM.render(
+    <Provider store={store}>
+      <App name="hentry" />
+    </Provider>,
+    root,
+  );
+}

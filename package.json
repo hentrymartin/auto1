@@ -16,6 +16,7 @@
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "4.2.0",
+    "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.16.0",
     "eslint-config-react-app": "^4.0.0",
     "eslint-loader": "2.1.2",
@@ -63,7 +64,12 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "flow:init": "yarn run flow init",
+    "flow:status": "yarn run flow status",
+    "flow:stop": "yarn run flow stop",
+    "flow:check": "yarn run flow check --all",
+    "flow:watch": "flow-watch"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -125,9 +131,12 @@
       "jest-watch-typeahead/testname"
     ]
   },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "enzyme": "^3.9.0",
+    "flow-bin": "^0.98.1",
+    "flow-typed": "^2.5.1",
+    "flow-watch": "^1.1.4"
   }
 }
