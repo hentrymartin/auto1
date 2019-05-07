@@ -1,11 +1,12 @@
 import React from 'react';
+import Header from './components/layouts/Header';
 
-type Props = {
-  name: string,
-};
-
-const App = (props: Props) => {
-  return <div>{props.name}</div>;
+const App = () => {
+  return (
+    <div className="app-wrapper">
+      <Header />
+    </div>
+  );
 };
 
 export default App;
